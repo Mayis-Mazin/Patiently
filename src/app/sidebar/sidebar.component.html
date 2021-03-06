@@ -1,9 +1,12 @@
 <nav class="navbar navbar-defult">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a href='#' class="brand">Patiently</a>
-        </div>
-        <div class="collapse navbar-collapse">
+            <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+            <a routerLink="/" class="navbar-brand">Patiently</a>
+            <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+            </button>
+          </div>
+          <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
             <ul class="nav navbar-nav">
                 <li><a href="#">Upcoming Patients</a></li>
                 <li><a href="#">Lab Results</a></li>
